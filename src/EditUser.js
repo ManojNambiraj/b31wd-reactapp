@@ -14,7 +14,7 @@ function EditUser() {
     },
     onSubmit: async (values) => {
       await axios.put(
-        `https://b31wd-nodeapp.herokuapp.com/${params.id}`,
+        `https://b31wd-nodeapp.herokuapp.com/edit/${params.id}`,
         values,
         {
           headers: {
