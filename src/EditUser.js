@@ -13,21 +13,28 @@ function EditUser() {
       email: "",
     },
     onSubmit: async (values) => {
-      await axios.put(`http://localhost:3000/edit/${params.id}`, values, {
-        headers: {
-          Authorization: localStorage.getItem("app_token"),
-        },
-      });
+      await axios.put(
+        `https://b31wd-nodeapp.herokuapp.com/${params.id}`,
+        values,
+        {
+          headers: {
+            Authorization: localStorage.getItem("app_token"),
+          },
+        }
+      );
       navigate("/");
     },
   });
 
   let userDatas = async () => {
-    let userData = await axios.get(`http://localhost:3000/user/${params.id}`, {
-      headers: {
-        Authorization: localStorage.getItem("app_token"),
-      },
-    });
+    let userData = await axios.get(
+      `https://b31wd-nodeapp.herokuapp.com/user/${params.id}`,
+      {
+        headers: {
+          Authorization: localStorage.getItem("app_token"),
+        },
+      }
+    );
     console.log(userData.data);
     delete userData.data._id;
     formik.setValues(userData.data);

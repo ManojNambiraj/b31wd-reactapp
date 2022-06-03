@@ -11,11 +11,15 @@ function UserCreate() {
       email: "",
     },
     onSubmit: async (values) => {
-      await axios.post("http://localhost:3000/create-user", values, {
-        headers: {
-          Authorization: localStorage.getItem("app_token"),
-        },
-      });
+      await axios.post(
+        "https://b31wd-nodeapp.herokuapp.com/create-user",
+        values,
+        {
+          headers: {
+            Authorization: localStorage.getItem("app_token"),
+          },
+        }
+      );
       navigate("/");
     },
   });

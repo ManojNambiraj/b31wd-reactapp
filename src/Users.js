@@ -10,16 +10,19 @@ function Users() {
   }, []);
 
   let getData = async () => {
-    let userList = await axios.get("http://localhost:3000/users", {
-      headers: {
-        Authorization: localStorage.getItem("app_token"),
-      },
-    });
+    let userList = await axios.get(
+      "https://b31wd-nodeapp.herokuapp.com/users",
+      {
+        headers: {
+          Authorization: localStorage.getItem("app_token"),
+        },
+      }
+    );
     setUsers(userList.data);
   };
 
   let handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/delete/${id}`, {
+    await axios.delete(`https://b31wd-nodeapp.herokuapp.com/delete/${id}`, {
       headers: {
         Authorization: localStorage.getItem("app_token"),
       },
