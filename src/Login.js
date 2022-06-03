@@ -17,7 +17,7 @@ function Login() {
           values
         );
         window.localStorage.setItem("app_token", login.data.token);
-        navigate("/");
+        navigate("/users");
       } catch (error) {
         alert("Your Email / Password is incorrect");
       }

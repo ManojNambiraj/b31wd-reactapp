@@ -20,7 +20,7 @@ function UserCreate() {
           },
         }
       );
-      navigate("/");
+      navigate("/users");
     },
   });
 

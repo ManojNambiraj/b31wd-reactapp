@@ -22,7 +22,7 @@ function EditUser() {
           },
         }
       );
-      navigate("/");
+      navigate("/users");
     },
   });
 
